@@ -1,0 +1,268 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f5f7;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px 32px 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  color: #222;
+}
+
+.config-section {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* BUTTONS - ALL SAME COLOR */
+.primary-btn,
+.secondary-btn,
+.action-btn,
+.danger-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.secondary-btn {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.secondary-btn:hover {
+  background: #d1d5db;
+}
+
+/* ACTION BUTTONS - ALL SAME COLOR (not red) */
+.action-btn {
+  background: #6b7280;
+  color: #fff;
+}
+
+.action-btn:hover {
+  background: #4b5563;
+}
+
+.action-btn:disabled {
+  background: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.danger-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.danger-btn:hover {
+  background: #dc2626;
+}
+
+.hidden {
+  display: none;
+}
+
+.note {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 12px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #4b5563;
+}
+
+/* PROGRESS BARS - PROMINENT */
+.progress-bar-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.progress-pill {
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+/* TARGET REACHED MESSAGE */
+.target-message {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.word-display {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 16px 0 20px;
+  color: #111827;
+}
+
+#options-container {
+  margin-bottom: 16px;
+}
+
+.option-row {
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.option-row:hover {
+  background: #f3f4f6;
+}
+
+.option-row label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  margin: 0;
+}
+
+.option-row input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* FEEDBACK */
+.feedback {
+  min-height: 24px;
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.feedback.correct {
+  color: #16a34a;
+}
+
+.feedback.incorrect {
+  color: #dc2626;
+}
+
+/* CORRECT ANSWER - GREEN AND BIGGER */
+.correct-answer {
+  display: block;
+  margin-top: 8px;
+  padding: 12px;
+  background: #d1fae5;
+  color: #065f46;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #10b981;
+}
+
+#next-action-panel {
+  margin-top: 20px;
+}
+
+.question {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #374151;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.baseline-intro {
+  margin: 16px 0;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+#baseline-progress,
+#test-progress {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+#baseline-complete,
+#test-complete {
+  margin-top: 24px;
+}
+
+.warning-message {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  color: #92400e;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+#session-timer,
+#test-timer {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+#trial-panel,
+#test-trial {
+  max-width: 700px;
+  margin: 0 auto;
+}

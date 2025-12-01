@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GRE Vocabulary Study</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- LOGIN SCREEN -->
+    <div id="login-screen">
+      <h1>GRE Vocabulary Study</h1>
+
+      <div class="config-section">
+        <label for="loginEmail">College email:</label>
+        <input type="text" id="loginEmail" placeholder="youremail@ic.ac.uk" />
+      </div>
+
+      <button id="login-btn" class="primary-btn">Log in / Create account</button>
+      
+      <button id="delete-my-account" class="danger-btn">
+        Delete My Account
+      </button>
+
+      <p class="note">
+        Use your college email. Your progress will be saved in this browser only.
+      </p>
+    </div>
+
+    <!-- BASELINE TEST SCREEN -->
+    <div id="baseline-screen" class="hidden">
+      <h1>Baseline Vocabulary Test</h1>
+      
+      <p class="baseline-intro">
+        Before starting the study sessions, please complete this baseline vocabulary test.
+      </p>
+
+      <div id="baseline-progress">
+        Question <span id="baseline-current">1</span> of <span id="baseline-total">0</span>
+      </div>
+
+      <div id="baseline-trial">
+        <div id="baseline-word" class="word-display"></div>
+
+        <form id="baseline-form">
+          <div id="baseline-options"></div>
+          <button type="submit" class="primary-btn">Submit Answer</button>
+        </form>
+
+        <div id="baseline-feedback" class="feedback"></div>
+      </div>
+
+      <div id="baseline-complete" class="hidden">
+        <h2>Baseline Test Complete!</h2>
+        <p id="baseline-score"></p>
+        <p class="note">Thank you for completing the baseline test. You are now ready to begin the study sessions.</p>
+        <button id="start-study-btn" class="primary-btn">Continue to Study Sessions</button>
+      </div>
+    </div>
+
+    <!-- CONFIG SCREEN -->
+    <div id="config-screen" class="hidden">
+      <h1>GRE Vocabulary Study</h1>
+
+      <p id="welcome-text"></p>
+
+      <div class="config-section">
+        <label for="day">Study Session (Day 1–7):</label>
+        <input type="number" id="day" min="1" max="7" value="1" />
+      </div>
+
+      <div id="session-restriction" class="hidden">
+        <p class="warning-message">
+          ⏰ You must wait until <span id="next-session-time"></span> to start your next session.
+        </p>
+      </div>
+
+      <button id="start-btn" class="primary-btn">Start Session</button>
+
+      <p class="note">
+        One session per day. Days 1-4: Learning sessions. Day 5: Immediate test. Day 7: Delayed test.
+      </p>
+    </div>
+
+    <!-- PRACTICE SCREEN -->
+    <div id="practice-screen" class="hidden">
+      <div class="top-bar">
+        <div id="day-label"></div>
+        <div id="session-timer" class="hidden">Session time: <span id="stat-session-time">0</span>s</div>
+      </div>
+
+      <!-- PROGRESS BARS -->
+      <div class="progress-bar-row">
+        <div id="daily-progress" class="progress-pill hidden"></div>
+        <div id="weekly-progress" class="progress-pill hidden"></div>
+      </div>
+
+      <!-- DAILY TARGET ACHIEVEMENT MESSAGE -->
+      <div id="target-message" class="target-message hidden">
+        🎯 You have reached your daily target!
+      </div>
+      
+      <div id="trial-panel">
+        <div id="word-display" class="word-display"></div>
+
+        <form id="answer-form">
+          <div id="options-container"></div>
+          <button type="submit" class="primary-btn" id="submit-answer-btn">
+            Submit Answer
+          </button>
+        </form>
+
+        <div id="feedback" class="feedback"></div>
+
+        <div id="next-action-panel" class="hidden">
+          <p class="question">What would you like to do next?</p>
+          <div class="button-row">
+            <button id="btn-new" class="action-btn">Learn a new word</button>
+            <button id="btn-review" class="action-btn">Review learned words</button>
+            <button id="btn-finish" class="action-btn">Finish for today</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEMORY TEST SCREEN (Day 5 & 7) -->
+    <div id="test-screen" class="hidden">
+      <div class="top-bar">
+        <div id="test-day-label"></div>
+        <div id="test-timer" class="hidden">Test time: <span id="test-time">0</span>s</div>
+      </div>
+
+      <div id="test-progress">
+        Question <span id="test-current">1</span> of <span id="test-total">50</span>
+      </div>
+
+      <div id="test-trial">
+        <div id="test-word" class="word-display"></div>
+
+        <form id="test-form">
+          <div id="test-options"></div>
+          <button type="submit" class="primary-btn">Submit Answer</button>
+        </form>
+
+        <div id="test-feedback" class="feedback"></div>
+      </div>
+
+      <div id="test-complete" class="hidden">
+        <h2>Test Complete!</h2>
+        <p id="test-score-summary"></p>
+        <button id="test-download-btn" class="primary-btn">Download Test Results</button>
+        <button id="test-finish-btn" class="secondary-btn">Return to Main Menu</button>
+      </div>
+    </div>
+
+    <!-- END SCREEN -->
+    <div id="end-screen" class="hidden">
+      <h2>Session Complete</h2>
+      <p id="end-summary"></p>
+      <p class="note">
+        Thank you for today's session! See you tomorrow.
+      </p>
+      <button id="restart-btn" class="secondary-btn">
+        Return to Main Menu
+      </button>
+    </div>
+  </div>
+    
+  <script src="api-integration.js"></script>
+  <script src="baseline_test.js"></script>
+  <script src="app.js"></script>
+  
+
+</body>
+</html>
